@@ -257,6 +257,7 @@ automatically.
 To configure your current shell run `source {poetry_home_env}`
 """
 
+
 POST_MESSAGE_WINDOWS = """{poetry} ({version}) is installed now. Great!
 
 To get started you need Poetry's bin directory ({poetry_home_bin}) in your `PATH`
@@ -735,10 +736,10 @@ class Installer:
         }
 
         if not self._modify_path:
-            kwargs["platform_msg"] = PRE_MESSAGE_NO_MODIFY_PATH
+            kwargs["platform_msg"] = PRE_MESSAGE_WINDOWS
         else:
             if WINDOWS:
-                kwargs["platform_msg"] = PRE_MESSAGE_WINDOWS
+            kwargs["platform_msg"] = PRE_MESSAGE_NO_MODIFY_PATH
             else:
                 profiles = [
                     colorize("comment", p.replace(os.getenv("HOME", ""), "$HOME"))
