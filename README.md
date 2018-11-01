@@ -319,7 +319,7 @@ poetry install
 ```
 
 If there is a `poetry.lock` file in the current directory,
-it will use the exact versions from there instead of resolving them.
+Poetry will use the exact versions from there instead of resolving them.
 This ensures that everyone using the library will get the same versions of the dependencies.
 
 If there is no `poetry.lock` file, Poetry will create one after dependency resolution.
@@ -347,7 +347,7 @@ poetry install -E mysql -E pgsql
 ### update
 
 In order to get the latest versions of the dependencies and to update the `poetry.lock` file,
-you should use the `update` command.
+use the `update` command.
 
 ```bash
 poetry update
