@@ -1,19 +1,19 @@
 """
-This script will install poetry and its dependencies
+This script will install Poetry and its dependencies
 in isolation from the rest of the system.
 
 It does, in order:
 
-  - Downloads the latest stable (or pre-release) version of poetry.
+  - Downloads the latest stable (or pre-release) version of Poetry.
   - Downloads all its dependencies in the poetry/_vendor directory.
   - Copies it and all extra files in $POETRY_HOME.
-  - Updates the PATH in a system-specific way.
+  - Updates $PATH in a system-specific way.
 
 There will be a `poetry` script that will be installed in $POETRY_HOME/bin
 which will act as the poetry command but is slightly different in the sense
 that it will use the current Python installation.
 
-What this means is that one Poetry installation can serve for multiple
+What this means is that one Poetry installation can operate with multiple
 Python versions.
 """
 import argparse
@@ -599,7 +599,7 @@ class Installer:
 
     def update_path(self):
         """
-        Tries to update the $PATH automatically.
+        Tries to update $PATH automatically.
         """
         if WINDOWS:
             return self.add_to_windows_path()
@@ -634,7 +634,7 @@ class Installer:
             print(
                 colorize(
                     "warning",
-                    "Unable to get the PATH value. It will not be updated automatically",
+                    "Unable to get $PATH value. $PATH will not be updated automatically",
                 )
             )
             self._modify_path = False
